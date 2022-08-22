@@ -1,0 +1,27 @@
+.followedProfileSection {
+    background-color: rgb(32, 32, 32);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    margin: 0.5em;
+    border-radius: 0.5em;
+    padding: 0.2em 1.5em;
+    margin-top: 2em;
+    width: 65%;
+    cursor: pointer;
+}
+
+.followedProfileSection img {
+    width: 40px;
+    height: 40px;
+    border-radius: 999px;
+    border: 4px solid rgb(2, 148, 2);
+}
+
+.followedProfileSection p {
+    font-family: monospace;
+    color: white;
+    font-weight: bold;
+    font-size: 0.9rem;
+}
