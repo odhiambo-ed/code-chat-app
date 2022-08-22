@@ -1,0 +1,33 @@
+.commentSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-direction: row;
+}
+
+.time {
+  color: white;
+  font-family: monospace;
+  margin-left: 0.4em;
+  margin-right: 1em;
+}
+
+.username {
+  color: yellow;
+  font-family: monospace;
+  margin-right: 1em;
+}
+
+.comment {
+  color: gray;
+  font-family: monospace;
+  margin-right: 1em;
+  font-weight: bold;
+}
+
+.hash {
+  color: rgb(4, 255, 88);
+  font-family: monospace;
+  font-weight: bold;
+  margin-left: 0.4em;
+}
