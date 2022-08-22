@@ -4,6 +4,7 @@ import Dislike from "../assets/dislike.jpeg";
 import Comments from "../assets/comments.jpeg";
 import Download from "../assets/download.jpeg";
 import User from "../assets/user.jpeg";
+import "../styles/Post.css";
 
 const Post = () => {
   return (
