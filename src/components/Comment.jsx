@@ -6,8 +6,8 @@ const Comment = () => {
     <div className='commentSection'>
         <p className="hash">[#]</p>
         <p className='time'>12:24</p>
-        <p className='usernames'>Edward</p>
-        <p className='comments'>This is great!!</p>  
+        <p className='username'>Edward</p>
+        <p className='comment'>This is great!!</p>  
     </div>
   )
 }

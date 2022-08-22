@@ -1,5 +1,6 @@
 import React from 'react'
 import Google from '../assets/google.jpeg'
+import "../styles/Login.css";
 
 const Login = () => {
   return (

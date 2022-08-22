@@ -3,7 +3,7 @@ import '../styles/FollowedProfiles.css'
 
 const FollowedProfiles = ({username, photo}) => {
   return (
-    <div>
+    <div className='followedProfileSection'>
           <img src={photo} alt="Photo" />
           <p>{ username }</p>   
     </div>

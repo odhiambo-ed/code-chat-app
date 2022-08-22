@@ -47,3 +47,12 @@
 .newPostSection img {
     width: 1.5vw;
 }
+
+.followedDiv {
+    width: 12%;
+    position: sticky;
+    top: 0.5em;
+    height: 100vh;
+    overflow: auto;
+    text-align:justify;
+}
