@@ -1,6 +1,7 @@
 import React from "react";
 import Comment from "../components/Comment";
 import Send from "../assets/send.jpeg";
+import "../styles/Comments.css";
 
 const Comments = () => {
   return (
