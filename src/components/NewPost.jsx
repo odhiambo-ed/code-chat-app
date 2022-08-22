@@ -4,7 +4,7 @@ import '../styles/NewPost.css'
 
 const NewPost = () => {
   return (
-    <div>
+    <div className="newPostSection">
        <img src={Plus} alt="Plus" />   
     </div>
   )
