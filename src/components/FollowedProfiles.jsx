@@ -1,4 +1,5 @@
 import React from 'react'
+import '../styles/FollowedProfiles.css'
 
 const FollowedProfiles = ({username, photo}) => {
   return (
