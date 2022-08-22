@@ -1,0 +1,42 @@
+.commentTitle {
+  background-color: rgb(26, 25, 25);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: sticky;
+  top: 0px;
+}
+
+.commentTitle h3 {
+  color: white;
+  font-family: monospace;
+}
+
+.createCommentSection {
+  display: flex;
+  align-items: center;
+  flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  z-index: 1;
+  background-color: rgb(26, 25, 25);
+  padding: 0.6em;
+  width: 100%;
+}
+
+.inputSection input {
+  width: 23.5vw;
+  padding: 0.6em 0.5em;
+  margin-right: 1em;
+  margin-left: 0.5em;
+  outline: none;
+}
+
+.sendSection img {
+  width: 2vw;
+  cursor: pointer;
+}
+
+.comments {
+  margin-bottom: 3.2em;
+}
