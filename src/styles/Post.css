@@ -1,0 +1,112 @@
+.postDiv {
+    background-color: rgb(17, 17, 17);
+    margin: 1em;
+    border-radius: 0.5em;
+    padding: 1em 1em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: row;
+    /* border: 1px solid orangered; */
+}
+
+.userProfile {
+    width: 2.5vw;
+    border-radius: 999px;
+}
+
+.mainDiv {
+    margin-left: 0.6em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+    flex-direction: column;
+}
+
+.nameSection {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nameSection p {
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    margin-right: 0.4em;
+    font-size: 1rem;
+}
+
+.nameSection h3 {
+    color: gray;
+    font-family: monospace;
+    font-size: 0.8rem;
+}
+
+.postTitle {
+    margin-top: 0.3em;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.postTitleText {
+    text-decoration: underline;
+}
+
+.postTitle h2 {
+    color: white;
+    font-family: monospace;
+}
+
+.postBody p {
+    color: rgb(238, 239, 240);
+    font-family: monospace;
+}
+
+.postImage {
+    width: 35vw;
+    border-radius: 0.3em;
+}
+
+.followButton {
+    background-color: gray;
+    padding: 0.4em 1.1em;
+    color: white;
+    font-weight: bold;
+    font-family: monospace;
+    border: none;
+    outline: none;
+    border-radius: 0.2em;
+    margin-left: 0.5em;
+    cursor: pointer;
+}
+
+.utilitiesSection {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+.subUtilities {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.subUtilities img { 
+    width: 1.3vw;
+    margin-right: 0.6em;
+    cursor: pointer;
+}
+
+.subUtilities p {
+    color: white;
+    font-family: monospace;
+    font-weight: bold;
+    font-size: 1.2em;
+}
