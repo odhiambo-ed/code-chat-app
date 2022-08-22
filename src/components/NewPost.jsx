@@ -1,5 +1,6 @@
 import React from 'react'
 import Plus from '../assets/plus.jpeg'
+import '../styles/NewPost.css'
 
 const NewPost = () => {
   return (
