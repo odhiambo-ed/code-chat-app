@@ -2,6 +2,7 @@ import React from 'react'
 import UserProfile from '../components/UserProfile'
 import FollowedProfiles from '../components/FollowedProfiles'
 import NewPost from '../components/NewPost'
+import "../styles/Followed.css";
 
 const sampleFollowers = [
   {
