@@ -1,10 +1,12 @@
 import React from 'react'
 import UserProfile from './components/UserProfile'
 
-export const App = () => {
+const App = () => {
   return (
     <div>
       <UserProfile />
     </div>
   )
 }
+
+export default App
