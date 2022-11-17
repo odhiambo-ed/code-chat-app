@@ -1,14 +1,43 @@
-import React from 'react'
-import ProfileImage from '../assets/passport.jpeg'
-import '../styles/UserProfile.css'
+import React from "react";
+import UserProfileImage from "../assets/user.jpeg";
+import { auth } from "../firebase";
 
-const UserProfile = () => {
+export const UserProfile = () => {
+  const signout = () => {
+    auth.signOut();
+  };
+  const username = auth?.currentUser.displayName.split(" ")[0];
   return (
-    <div className='userProfileSection'>
-          <img src={ProfileImage} alt="User Profile" />
-          <p>Edward Odhiambo</p>
+    <div>
+      <div className="userProfileSection">
+        <img src={UserProfileImage} alt="User Profile" />
+        <p>{username}</p>
+      </div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+        }}
+      >
+        <button
+          style={{
+            backgroundColor: "red",
+            border: "none",
+            outline: "none",
+            paddingLeft: "2em",
+            paddingRight: "2em",
+            paddingTop: "0.5em",
+            paddingBottom: "0.5em",
+            borderRadius: "10px",
+            cursor: "pointer",
+            color: "white",
+          }}
+          onClick={signout}
+        >
+          Sign Out
+        </button>
+      </div>
     </div>
-  )
-}
-
-export default UserProfile
+  );
+};
