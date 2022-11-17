@@ -1,13 +1,25 @@
 import React from "react";
-import Post from "../components/Post";
-import "../styles/Body.css";
+import "../styles/HomePage.css";
+import { Post } from "../components/Post";
 
-const Body = () => {
+export const Body = ({ posts, setDefaultPost, postReference }) => {
   return (
     <div className="bodyDiv">
-      <Post />
+      {posts.map((item) => {
+        return (
+          <Post
+            key={item.id}
+            reference={item.id}
+            username={item.data.username}
+            time={item.data.time}
+            body={item.data.postBody}
+            description={item.data.postDescription}
+            photo={item.data.photo}
+            setDefaultPost={setDefaultPost}
+            postReference={postReference}
+          />
+        );
+      })}
     </div>
   );
 };
-
-export default Body;
