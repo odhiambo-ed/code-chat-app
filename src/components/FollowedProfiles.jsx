@@ -1,13 +1,11 @@
-import React from 'react'
-import '../styles/FollowedProfiles.css'
+import React from "react";
+import User from "../assets/user.jpeg";
 
-const FollowedProfiles = ({username, photo}) => {
+export const FollowedProfiles = ({ username }) => {
   return (
-    <div className='followedProfileSection'>
-          <img src={photo} alt="Photo" />
-          <p>{ username }</p>   
+    <div className="followedProfileSection">
+      <img src={User} alt="Followed Profile" />
+      <p>{username.split(" ")[0]}</p>
     </div>
-  )
-}
-
-export default FollowedProfiles
+  );
+};
