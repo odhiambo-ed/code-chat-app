@@ -8,11 +8,11 @@
 }
 
 .commentsDiv {
-  width: 30%;
+  width: 100%;
   background-color: rgb(0, 0, 0);
   position: sticky;
   top: 0;
-  height: 100vh;
+  height: 50vh;
   overflow: auto;
   text-align:justify;
 }
@@ -35,16 +35,11 @@
 }
 
 .inputSection input {
-  width: 23.5vw;
+  width: 200;
   padding: 0.6em 0.5em;
   margin-right: 1em;
   margin-left: 0.5em;
   outline: none;
-}
-
-.sendSection img {
-  width: 2vw;
-  cursor: pointer;
 }
 
 .comments {

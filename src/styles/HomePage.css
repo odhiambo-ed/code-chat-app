@@ -1,6 +1,9 @@
 .homeDiv {
     display: flex;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 80px;
 }
 
 .followedDiv {
@@ -14,6 +17,7 @@
 
 .bodyDiv {
     width: 58%;
+    margin: 0 auto;
     background-color: rgb(46, 46, 46);
     height: 100vh;
     overflow: auto;

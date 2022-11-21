@@ -12,12 +12,14 @@
   font-family: monospace;
   margin-left: 0.4em;
   width: 11em;
+  font-size: 0.7em;
 }
 
 .username {
   color: #29faef;
   font-family: monospace;
   margin-right: 1em;
+  font-size: 0.7em;
 }
 
 .comment {
@@ -27,6 +29,7 @@
   margin-left: 1.5em;
   word-wrap: break-word;
   width: 90%;
+  font-size: 0.8em;
 }
 
 .hash {
@@ -34,10 +37,17 @@
   font-family: monospace;
   font-weight: bold;
   margin-left: 0.4em;
+  font-size: 0.7em;
 }
 
 .individualComment {
-  display: flex;
+  display: flex;  
   justify-content: flex-start;
   align-items: flex-start;
+}
+
+.chatSection {
+  background-color: gray;
+  margin: 5px;
+  padding: 10px;
 }

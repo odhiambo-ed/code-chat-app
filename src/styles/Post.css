@@ -1,16 +1,12 @@
 .postDiv {
-    background-color: rgb(17, 17, 17);
+    background-color: rgb(17, 17, 17) !important;
     margin: 1em;
     border-radius: 0.5em;
     padding: 1em 1em;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
 }
 
 .userProfile {
-    width: 2.5vw;
+    max-width: 50px;
     border-radius: 999px;
 }
 
@@ -25,8 +21,9 @@
 .nameSection {
     display: flex;
     justify-content: flex-start;
-    align-items: center;
+    align-items: flex-start;
     flex-direction: row;
+    flex-wrap: wrap;
 }
 
 .nameSection p {
@@ -65,7 +62,7 @@
 }
 
 .postImage {
-    width: 350px;
+    max-width: 350px;
     height: 200px;
     object-fit: contain;
 }
