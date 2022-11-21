@@ -1,15 +1,19 @@
 import React, { useState, useEffect } from "react";
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
 import Form from "react-bootstrap/Form";
 import "../styles/HomePage.css";
 import firebase from "firebase";
 import db, { auth, store } from "../firebase";
 
-import Body from "../sub-pages/Body";
 import Footer from "../components/Footer";
 
 import Navigation from "../components/Navigation";
+import Post from "../components/Post";
+import FollowedProfiles from "../components/FollowedProfiles";
+import Comments from "../components/Comments";
 
 const HomePage = () => {
   const [postReference, setPostReference] = useState("");
@@ -19,6 +23,19 @@ const HomePage = () => {
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
   const [progress, setProgress] = useState(0);
+  const [followed, setFollowed] = useState([]);
+
+  useEffect(() => {
+    const dbCol = `followed${auth.currentUser.email}`;
+    db.collection(dbCol).onSnapshot((snapshot) => {
+      setFollowed(
+        snapshot.docs.map((doc) => ({
+          id: doc.id,
+          data: doc.data(),
+        }))
+      );
+    });
+  }, []);
 
   const handleClose = () => setShow(false);
   const handleShow = () => setShow(true);
@@ -88,7 +105,13 @@ const HomePage = () => {
     <>
       <Navigation />
       <div className="homeDiv">
-        <Button variant="primary" onClick={handleShow}>
+        <Button
+          variant="primary"
+          style={{
+            marginBottom: 10,
+          }}
+          onClick={handleShow}
+        >
           Create New Post
         </Button>
         <Modal show={show} onHide={handleClose}>
@@ -147,12 +170,51 @@ const HomePage = () => {
             </Button>
           </Modal.Footer>
         </Modal>
-        <Body
-          posts={postData}
-          postReference={postReference}
-          setDefaultPost={setDefaultPost}
-          setPostReference={setPostReference}
-        />
+        <div
+          style={{
+            width: "98%",
+          }}
+        >
+          <Row>
+            <Col
+              md={3}
+              style={{
+                overflow: "auto",
+                textAlign: "justify",
+                height: "75vh",
+              }}
+            >
+              {followed.map((val) => (
+                <FollowedProfiles key={val.id} username={val.data.username} />
+              ))}
+            </Col>
+            <Col
+              md={5}
+              style={{
+                overflow: "auto",
+                textAlign: "justify",
+                height: "75vh",
+              }}
+            >
+              {postData.map((item) => (
+                <Post
+                  key={item.id}
+                  reference={item.id}
+                  username={item.data.username}
+                  time={item.data.time}
+                  body={item.data.postBody}
+                  description={item.data.postDescription}
+                  photo={item.data.photo}
+                  postReference={postReference}
+                  setDefaultPost={setDefaultPost}
+                />
+              ))}
+            </Col>
+            <Col md={4}>
+              <Comments postReference={postReference} />
+            </Col>
+          </Row>
+        </div>
       </div>
       <Footer />
     </>
