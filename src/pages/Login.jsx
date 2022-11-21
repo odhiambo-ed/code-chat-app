@@ -8,6 +8,7 @@ import Button from "react-bootstrap/Button";
 import db, { auth, provider } from "../firebase";
 
 import Landing from "../components/Landing";
+import Footer from "../components/Footer";
 
 const Login = () => {
   const [postData, setPostData] = useState([]);
@@ -62,6 +63,7 @@ const Login = () => {
           <Col md={3} />
         </Row>
       </Container>
+      <Footer />
     </>
   );
 };

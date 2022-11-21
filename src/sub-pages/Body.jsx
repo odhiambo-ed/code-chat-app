@@ -1,12 +1,16 @@
 import React from "react";
-import "../styles/HomePage.css";
-import { Post } from "../components/Post";
+import Container from "react-bootstrap/Container";
+import Row from "react-bootstrap/Row";
+import Col from "react-bootstrap/Col";
+import PropTypes from "prop-types";
+import Post from "../components/Post";
 
-export const Body = ({ posts, setDefaultPost, postReference }) => {
-  return (
-    <div className="bodyDiv">
-      {posts.map((item) => {
-        return (
+const Body = ({ posts, setDefaultPost, postReference }) => (
+  <Container>
+    <Row>
+      <Col md={3} />
+      <Col md={6}>
+        {posts.map((item) => (
           <Post
             key={item.id}
             reference={item.id}
@@ -18,8 +22,17 @@ export const Body = ({ posts, setDefaultPost, postReference }) => {
             setDefaultPost={setDefaultPost}
             postReference={postReference}
           />
-        );
-      })}
-    </div>
-  );
+        ))}
+      </Col>
+      <Col md={3} />
+    </Row>
+  </Container>
+);
+
+Body.propTypes = {
+  posts: PropTypes.arrayOf().isRequired,
+  setDefaultPost: PropTypes.func.isRequired,
+  postReference: PropTypes.string.isRequired,
 };
+
+export default Body;

@@ -7,6 +7,7 @@ import firebase from "firebase";
 import db, { auth, store } from "../firebase";
 
 import Body from "../sub-pages/Body";
+import Footer from "../components/Footer";
 
 import Navigation from "../components/Navigation";
 
@@ -153,6 +154,7 @@ const HomePage = () => {
           setPostReference={setPostReference}
         />
       </div>
+      <Footer />
     </>
   );
 };
