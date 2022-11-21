@@ -14,7 +14,7 @@
   top: 0;
   height: 50vh;
   overflow: auto;
-  text-align:justify;
+  text-align: justify;
 }
 
 .commentTitle h3 {
@@ -35,7 +35,7 @@
 }
 
 .inputSection input {
-  width: 200;
+  width: 400px;
   padding: 0.6em 0.5em;
   margin-right: 1em;
   margin-left: 0.5em;
@@ -44,4 +44,11 @@
 
 .comments {
   margin-bottom: 3.2em;
+}
+
+.chatSection {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
 }

@@ -1,48 +1,31 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import { NavDropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
-import NavDropdown from "react-bootstrap/NavDropdown";
-import Button from "react-bootstrap/Button";
-import db, { auth } from "../firebase";
+import { auth } from "../firebase";
 
 function Navigation() {
-  const [followed, setFollowed] = useState([]);
-  useEffect(() => {
-    const dbCol = `followed${auth.currentUser.email}`;
-    db.collection(dbCol).onSnapshot((snapshot) => {
-      setFollowed(
-        snapshot.docs.map((doc) => ({
-          id: doc.id,
-          data: doc.data(),
-        }))
-      );
-    });
-  }, []);
   return (
     <Navbar fixed="top" collapseOnSelect expand="lg" bg="dark" variant="dark">
       <Container>
-        <Navbar.Brand href="#home">Code Chat App</Navbar.Brand>
+        <Navbar.Brand href="#home">Code-Labs</Navbar.Brand>
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="me-auto">
-            <NavDropdown title="Followed" id="collasible-nav-dropdown">
-              {followed.map((item) => (
-                <NavDropdown.Item key={item.id}>
-                  {item.data.username}
-                </NavDropdown.Item>
-              ))}
-            </NavDropdown>
-          </Nav>
+          <Nav className="me-auto" />
           <Nav>
-            <Button
-              onClick={() => {
-                auth.signOut();
-              }}
-              variant="danger"
+            <NavDropdown
+              title={auth?.currentUser?.displayName}
+              id="collasible-nav-dropdown"
             >
-              Sign Out
-            </Button>
+              <NavDropdown.Item
+                onClick={() => {
+                  auth.signOut();
+                }}
+              >
+                Sign Out
+              </NavDropdown.Item>
+            </NavDropdown>
           </Nav>
         </Navbar.Collapse>
       </Container>
