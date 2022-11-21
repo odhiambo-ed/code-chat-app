@@ -1,8 +1,8 @@
 import React from "react";
-import UserProfileImage from "../assets/user.jpeg";
+import UserProfileImage from "../images/user.png";
 import { auth } from "../firebase";
 
-export const UserProfile = () => {
+const UserProfile = () => {
   const signout = () => {
     auth.signOut();
   };
@@ -21,6 +21,7 @@ export const UserProfile = () => {
         }}
       >
         <button
+          type="button"
           style={{
             backgroundColor: "red",
             border: "none",
@@ -41,3 +42,5 @@ export const UserProfile = () => {
     </div>
   );
 };
+
+export default UserProfile;
