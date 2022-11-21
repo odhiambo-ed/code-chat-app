@@ -22,7 +22,7 @@ const Footer = () => (
             marginLeft: 23,
           }}
         >
-          React Ecommerce App
+          Edward - Code Chat App
         </span>
       </div>
     </Container>
