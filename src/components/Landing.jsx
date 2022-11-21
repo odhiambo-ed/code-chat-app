@@ -3,7 +3,7 @@ import Card from "react-bootstrap/Card";
 import "../styles/Post.css";
 import moment from "moment";
 import PropTypes from "prop-types";
-import User from "../images/user.png";
+import User from "../assets/user.png";
 import "../styles/Comments.css";
 
 const Landing = ({ username, time, body, description, photo }) => (

@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import User from "../images/user.png";
+import User from "../assets/user.png";
 
 const FollowedProfiles = ({ username }) => (
   <div className="followedProfileSection">

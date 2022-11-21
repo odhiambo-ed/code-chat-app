@@ -1,5 +1,5 @@
 import React from "react";
-import UserProfileImage from "../images/user.png";
+import UserProfileImage from "../assets/user.png";
 import { auth } from "../firebase";
 
 const UserProfile = () => {
