@@ -1,114 +1,114 @@
 .postDiv {
-    background-color: rgb(17, 17, 17) !important;
-    margin: 1em;
-    border-radius: 0.5em;
-    padding: 1em 1em;
+  background-color: rgb(17, 17, 17) !important;
+  margin: 1em;
+  border-radius: 0.5em;
+  padding: 1em 1em;
 }
 
 .userProfile {
-    max-width: 50px;
-    border-radius: 999px;
+  max-width: 50px;
+  border-radius: 999px;
 }
 
 .mainDiv {
-    margin-left: 0.6em;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: column;
+  margin-left: 0.6em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .nameSection {
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
-    flex-direction: row;
-    flex-wrap: wrap;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  flex-wrap: wrap;
 }
 
 .nameSection p {
-    color: white;
-    font-weight: bold;
-    font-family: monospace;
-    margin-right: 0.4em;
-    font-size: 1rem;
-    width: 200px;
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+  margin-right: 0.4em;
+  font-size: 1rem;
+  width: 200px;
 }
 
 .nameSection h3 {
-    color: gray;
-    font-family: monospace;
-    font-size: 0.8rem;
+  color: gray;
+  font-family: monospace;
+  font-size: 0.8rem;
 }
 
 .postTitle {
-    margin-top: 0.3em;
-    display: flex;
-    justify-content: flex-start;
-    align-items: flex-start;
+  margin-top: 0.3em;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
 }
 
 .postTitleText {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
 .postTitle h2 {
-    color: white;
-    font-family: monospace;
-    font-size: 20px;
-    margin-top: 20px;
+  color: white;
+  font-family: monospace;
+  font-size: 20px;
+  margin-top: 20px;
 }
 
 .postBody p {
-    color: rgb(238, 239, 240);
-    font-family: monospace;
+  color: rgb(238, 239, 240);
+  font-family: monospace;
 }
 
 .postImage {
-    max-width: 350px;
-    height: 200px;
-    object-fit: contain;
-    margin: 20px;
+  max-width: 350px;
+  height: 200px;
+  object-fit: contain;
+  margin: 20px;
 }
 
 .followButton {
-    background-color: gray;
-    padding: 0.4em 1.1em;
-    color: white;
-    font-weight: bold;
-    font-family: monospace;
-    border: none;
-    outline: none;
-    border-radius: 0.2em;
-    margin-left: 30px;
-    cursor: pointer;
-    margin-top: 10px;   
+  background-color: gray;
+  padding: 0.4em 1.1em;
+  color: white;
+  font-weight: bold;
+  font-family: monospace;
+  border: none;
+  outline: none;
+  border-radius: 0.2em;
+  margin-left: 30px;
+  cursor: pointer;
+  margin-top: 10px;
 }
 
 .utilitiesSection {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    flex-wrap: wrap;
-    width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .subUtilities {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-.subUtilities img { 
-    width: 1.3vw;
-    margin-right: 0.6em;
-    cursor: pointer;
+.subUtilities img {
+  width: 1.3vw;
+  margin-right: 0.6em;
+  cursor: pointer;
 }
 
 .subUtilities p {
-    color: white;
-    font-family: monospace;
-    font-weight: bold;
-    font-size: 1.2em;
+  color: white;
+  font-family: monospace;
+  font-weight: bold;
+  font-size: 1.2em;
 }

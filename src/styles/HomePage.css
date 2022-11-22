@@ -50,26 +50,26 @@
 }
 
 .optionButtons {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    flex-direction: row;
-    margin-top: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  margin-top: 20px;
 }
 
 .followedProfilesSection {
-    overflow: auto;
-    text-align: justify;
-    height: 85vh;
-    border-radius: 10px;
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    flex-direction: column;
+  overflow: auto;
+  text-align: justify;
+  height: 85vh;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  flex-direction: column;
 }
 
 .posts {
-    overflow: auto;
-    text-align: justify;
-    height: 85vh;
+  overflow: auto;
+  text-align: justify;
+  height: 85vh;
 }
