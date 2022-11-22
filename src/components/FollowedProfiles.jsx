@@ -1,12 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
-import User from "../assets/user.png";
 import "../styles/FollowedProfiles.css";
 
 const FollowedProfiles = ({ username }) => (
   <div className="followedProfileSection">
-    <img src={User} alt="Followed Profile" className="userImage" />
-    <p className="userName">{!!username && username.split(" ")[0]}</p>
+    <img
+      src={`https://avatars.dicebear.com/api/avataaars/${
+        username.split(" ")[0]
+      }.svg`}
+      alt="Followed Profile"
+      className="userImage"
+    />
+    <p className="userName">{!!username && username}</p>
   </div>
 );
 

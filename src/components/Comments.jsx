@@ -1,25 +1,25 @@
-import React, { useState, useEffect, useRef } from "react";
-import "../styles/Comments.css";
-import Form from "react-bootstrap/Form";
-import PropTypes from "prop-types";
-import firebase from "firebase";
-import db, { auth } from "../firebase";
-import CommentSection from "./CommentSection";
+import React, { useState, useEffect, useRef } from 'react';
+import '../styles/Comments.css';
+import Form from 'react-bootstrap/Form';
+import PropTypes from 'prop-types';
+import firebase from 'firebase';
+import db, { auth } from '../firebase';
+import CommentSection from './CommentSection';
 
 const Comments = ({ postReference }) => {
   const [comments, setComments] = useState([]);
-  const [comment, setComment] = useState("");
+  const [comment, setComment] = useState('');
 
   useEffect(() => {
     if (postReference.length > 0) {
       db.collection(postReference)
-        .orderBy("time", "asc")
+        .orderBy('time', 'asc')
         .onSnapshot((snapshot) => {
           setComments(
             snapshot.docs.map((doc) => ({
               id: doc.id,
               data: doc.data(),
-            }))
+            })),
           );
         });
     }
@@ -35,18 +35,20 @@ const Comments = ({ postReference }) => {
           time: firebase.firestore.FieldValue.serverTimestamp(),
         })
         .then(async () => {
-          await setComment("");
-          await dummy.current.scrollIntoView({ behavior: "smooth" });
+          await setComment('');
+          await dummy.current.scrollIntoView({ behavior: 'smooth' });
         });
     }
   };
   return (
-    <div>
+    <div style={{
+      marginTop: 15
+    }}>
       <div
         style={{
-          overflow: "auto",
-          textAlign: "justify",
-          height: "70vh",
+          overflow: 'auto',
+          textAlign: 'justify',
+          height: '75vh',
         }}
       >
         <div>
@@ -69,7 +71,7 @@ const Comments = ({ postReference }) => {
               onChange={(e) => setComment(e.target.value)}
               type="text"
               style={{
-                width: "450px",
+                width: '450px',
               }}
               placeholder="Write a comment..."
             />

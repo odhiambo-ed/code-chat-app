@@ -1,13 +1,13 @@
-import React from "react";
-import "../styles/Comment.css";
-import moment from "moment";
-import PropTypes from "prop-types";
-import { auth } from "../firebase";
+import React from 'react';
+import '../styles/Comment.css';
+import moment from 'moment';
+import PropTypes from 'prop-types';
+import { auth } from '../firebase';
 
 const CommentSection = ({ time, username, comment }) => (
   <div
     style={{
-      width: "100%",
+      width: '100%',
     }}
   >
     <div className="commentSection">
@@ -18,29 +18,30 @@ const CommentSection = ({ time, username, comment }) => (
       <p className="username">
         <span
           style={{
-            color: "red",
-            fontWeight: "bold",
+            color: 'red',
+            fontWeight: 'bold',
           }}
         >
-          {">"}
+          {'>'}
         </span>
         <span
           style={{
-            color: "green",
-            fontWeight: "bold",
+            color: 'green',
+            fontWeight: 'bold',
           }}
         >
-          {">"}
+          {'>'}
         </span>
         <span
           style={{
-            color: "yellow",
-            fontWeight: "bold",
+            color: 'yellow',
+            fontWeight: 'bold',
           }}
         >
-          {">"}
-        </span>{" "}
-        {username === auth.currentUser.displayName ? "You" : username}
+          {'>'}
+        </span>
+        {' '}
+        {username === auth.currentUser.displayName ? 'You' : username}
       </p>
     </div>
     <div className="individualComment">

@@ -1,10 +1,10 @@
-import React, { useState, useEffect } from "react";
-import "../styles/Followed.css";
-import "../styles/HomePage.css";
+import React, { useState, useEffect } from 'react';
+import '../styles/Followed.css';
+import '../styles/HomePage.css';
 
-import UserProfile from "../components/UserProfile";
-import FollowedProfiles from "../components/FollowedProfiles";
-import db, { auth } from "../firebase";
+import UserProfile from '../components/UserProfile';
+import FollowedProfiles from '../components/FollowedProfiles';
+import db, { auth } from '../firebase';
 
 const Followed = () => {
   const [followed, setFollowed] = useState([]);
@@ -15,7 +15,7 @@ const Followed = () => {
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
-        }))
+        })),
       );
     });
   }, []);

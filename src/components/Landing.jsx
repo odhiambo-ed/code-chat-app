@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 import "../styles/Post.css";
 import moment from "moment";
 import PropTypes from "prop-types";
-import User from "../assets/user.png";
 import "../styles/Comments.css";
 
 const Landing = ({ username, time, body, description, photo }) => (
@@ -16,18 +15,31 @@ const Landing = ({ username, time, body, description, photo }) => (
   >
     <Card.Body>
       <div>
-        <img className="userProfile" src={User} alt="User" />
         <div className="mainDiv">
           {/* Name and Date section */}
+          <img
+            className="userProfile"
+            src={`https://avatars.dicebear.com/api/avataaars/${
+              username.split(" ")[0]
+            }.svg`}
+            alt="User"
+          />
           <div className="nameSection">
-            <p>{username}</p>
-            <h3
+            <div
               style={{
-                marginRight: 20,
+                marginTop: 10,
               }}
             >
-              {moment(new Date(time?.toDate()).toUTCString()).fromNow()}
-            </h3>
+              <p>{username}</p>
+              <h3
+                style={{
+                  marginRight: 20,
+                  marginTop: -13,
+                }}
+              >
+                {moment(new Date(time?.toDate()).toUTCString()).fromNow()}
+              </h3>
+            </div>
           </div>
           {/* Post Title */}
           <div className="postTitle">

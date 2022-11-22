@@ -3,7 +3,6 @@ import Card from "react-bootstrap/Card";
 import "../styles/Post.css";
 import moment from "moment";
 import PropTypes from "prop-types";
-import User from "../assets/user.png";
 import Comment from "../assets/comments.png";
 import Download from "../assets/download.png";
 import db, { auth } from "../firebase";
@@ -59,7 +58,7 @@ const Post = ({
       style={{
         marginBottom: 20,
         marginTop: 20,
-        border: postReference === reference && "1px solid orangered",
+        border: postReference === reference && "1px solid gray",
         cursor: "pointer",
       }}
     >
@@ -67,22 +66,41 @@ const Post = ({
         <div>
           <div className="mainDiv">
             {/* Name and Date section */}
+            <img
+              className="userProfile"
+              src={`https://avatars.dicebear.com/api/avataaars/${
+                username.split(" ")[0]
+              }.svg`}
+              alt="User"
+            />
             <div className="nameSection">
-              <img className="userProfile" src={User} alt="User" />
-              <p>
-                {username === auth.currentUser.displayName ? "You" : username}
-              </p>
-              <h3
-                style={{
-                  marginRight: 20,
-                }}
-              >
-                {moment(new Date(time?.toDate()).toUTCString()).fromNow()}
-              </h3>
+              <div style={{
+                marginTop: 10
+              }}>
+                <p>
+                  {username === auth.currentUser.displayName ? "You" : username}
+                </p>
+                <h3
+                  style={{
+                    marginRight: 20,
+                    marginTop: -13,
+                  }}
+                >
+                  {moment(new Date(time?.toDate()).toUTCString()).fromNow()}
+                </h3>
+              </div>
               {username !== auth.currentUser.displayName && (
                 <>
                   {followed.length > 0 ? (
-                    <h3>Following</h3>
+                    <h3
+                      style={{
+                        textAlign: "center",
+                        marginLeft: 30,
+                        marginTop: 10
+                      }}
+                    >
+                      Following
+                    </h3>
                   ) : (
                     <button
                       type="button"

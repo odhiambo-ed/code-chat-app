@@ -3,10 +3,13 @@ import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Spinner from "react-bootstrap/Spinner";
 import Form from "react-bootstrap/Form";
 import "../styles/HomePage.css";
 import firebase from "firebase";
 import db, { auth, store } from "../firebase";
+import Skeleton, { SkeletonTheme } from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 import Footer from "../components/Footer";
 
@@ -22,8 +25,8 @@ const HomePage = () => {
   const [body, setBody] = useState("");
   const [description, setDescription] = useState("");
   const [image, setImage] = useState(null);
-  const [progress, setProgress] = useState(0);
   const [followed, setFollowed] = useState([]);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
     const dbCol = `followed${auth.currentUser.email}`;
@@ -64,6 +67,7 @@ const HomePage = () => {
   };
 
   const handleUpload = () => {
+    setVisible(!visible);
     const uploadTask = store.ref(`images/${image.name}`).put(image);
     uploadTask.on(
       "state_changed",
@@ -71,10 +75,11 @@ const HomePage = () => {
         const count = Math.round(
           (snapshot.bytesTransferred / snapshot.totalBytes) * 100
         );
-        setProgress(count);
+        console.log(count);
       },
       (error) => {
         console.log(error);
+        setVisible(visible);
       },
       () => {
         store
@@ -92,10 +97,10 @@ const HomePage = () => {
                 time: firebase.firestore.FieldValue.serverTimestamp(),
               })
               .then(async () => {});
-            await setProgress(0);
             await setBody("");
             await setDescription("");
             await setImage(null);
+            await setVisible(visible);
             await handleClose();
           });
       }
@@ -105,42 +110,48 @@ const HomePage = () => {
     <>
       <Navigation />
       <div className="homeDiv">
-        <Button
-          variant="primary"
-          style={{
-            marginBottom: 10,
-          }}
-          onClick={handleShow}
-        >
-          Create New Post
-        </Button>
         <Modal show={show} onHide={handleClose}>
-          <Modal.Header closeButton>
-            <Modal.Title>New Post</Modal.Title>
-          </Modal.Header>
           <Modal.Body>
             <Form>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlInput1"
               >
-                <Form.Label>Post Body</Form.Label>
+                <Form.Label
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  Post Body
+                </Form.Label>
                 <Form.Control
                   value={body}
                   onChange={(e) => setBody(e.target.value)}
-                  type="email"
+                  type="text"
+                  style={{
+                    backgroundColor: "rgb(206, 204, 204)",
+                  }}
                 />
               </Form.Group>
               <Form.Group
                 className="mb-3"
                 controlId="exampleForm.ControlTextarea1"
               >
-                <Form.Label>Post Description</Form.Label>
+                <Form.Label
+                  style={{
+                    color: "white",
+                  }}
+                >
+                  Post Description
+                </Form.Label>
                 <Form.Control
                   value={description}
                   onChange={(e) => setDescription(e.target.value)}
                   as="textarea"
                   rows={3}
+                  style={{
+                    backgroundColor: "rgb(206, 204, 204)",
+                  }}
                 />
               </Form.Group>
               <input
@@ -152,23 +163,20 @@ const HomePage = () => {
                   color: "white",
                 }}
               />
-              <p
-                style={{
-                  color: "white",
-                }}
-              >
-                {progress}
-              </p>
             </Form>
+            <div className="optionButtons">
+              <Button variant="danger" disabled={visible} onClick={handleClose}>
+                Cancel
+              </Button>
+              {visible ? (
+                <Spinner animation="border" variant="success" />
+              ) : (
+                <Button variant="success" onClick={handleUpload}>
+                  Create Post
+                </Button>
+              )}
+            </div>
           </Modal.Body>
-          <Modal.Footer>
-            <Button variant="danger" onClick={handleClose}>
-              Cancel
-            </Button>
-            <Button variant="success" onClick={handleUpload}>
-              Create Post
-            </Button>
-          </Modal.Footer>
         </Modal>
         <div
           style={{
@@ -176,42 +184,99 @@ const HomePage = () => {
           }}
         >
           <Row>
-            <Col
-              md={3}
-              style={{
-                overflow: "auto",
-                textAlign: "justify",
-                height: "75vh",
-              }}
-            >
-              {followed.map((val) => (
-                <FollowedProfiles key={val.id} username={val.data.username} />
-              ))}
+            <Col md={3} className="followedProfilesSection">
+              <Button onClick={handleShow} variant="outline-secondary">
+                New Post
+              </Button>
+              {followed.length > 0 ? (
+                <>
+                  {followed.map((val) => (
+                    <FollowedProfiles
+                      key={val.id}
+                      username={val.data.username}
+                    />
+                  ))}
+                </>
+              ) : (
+                <div
+                  style={{
+                    marginTop: 20,
+                  }}
+                >
+                  <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                    <p>
+                      <Skeleton
+                        count={3}
+                        width={300}
+                        height={50}
+                        style={{
+                          marginBottom: 20,
+                        }}
+                      />
+                    </p>
+                  </SkeletonTheme>
+                </div>
+              )}
             </Col>
-            <Col
-              md={5}
-              style={{
-                overflow: "auto",
-                textAlign: "justify",
-                height: "75vh",
-              }}
-            >
-              {postData.map((item) => (
-                <Post
-                  key={item.id}
-                  reference={item.id}
-                  username={item.data.username}
-                  time={item.data.time}
-                  body={item.data.postBody}
-                  description={item.data.postDescription}
-                  photo={item.data.photo}
-                  postReference={postReference}
-                  setDefaultPost={setDefaultPost}
-                />
-              ))}
+            <Col md={5} className="posts">
+              {postData.length > 0 ? (
+                <>
+                  {postData.map((item) => (
+                    <Post
+                      key={item.id}
+                      reference={item.id}
+                      username={item.data.username}
+                      time={item.data.time}
+                      body={item.data.postBody}
+                      description={item.data.postDescription}
+                      photo={item.data.photo}
+                      postReference={postReference}
+                      setDefaultPost={setDefaultPost}
+                    />
+                  ))}
+                </>
+              ) : (
+                <div
+                  style={{
+                    marginTop: 20,
+                  }}
+                >
+                  <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                    <p>
+                      <Skeleton
+                        count={3}
+                        height={200}
+                        style={{
+                          marginBottom: 20,
+                        }}
+                      />
+                    </p>
+                  </SkeletonTheme>
+                </div>
+              )}
             </Col>
             <Col md={4}>
-              <Comments postReference={postReference} />
+              {postReference.length > 0 ? (
+                <Comments postReference={postReference} />
+              ) : (
+                <div
+                  style={{
+                    marginTop: 20,
+                  }}
+                >
+                  <SkeletonTheme baseColor="#202020" highlightColor="#444">
+                    <p>
+                      <Skeleton
+                        count={3}
+                        height={50}
+                        style={{
+                          marginBottom: 20,
+                        }}
+                      />
+                    </p>
+                  </SkeletonTheme>
+                </div>
+              )}
             </Col>
           </Row>
         </div>

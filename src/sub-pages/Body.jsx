@@ -1,12 +1,12 @@
-import React, { useState, useEffect } from "react";
-import Container from "react-bootstrap/Container";
-import Row from "react-bootstrap/Row";
-import Col from "react-bootstrap/Col";
-import PropTypes from "prop-types";
-import Post from "../components/Post";
-import db, { auth } from "../firebase";
+import React, { useState, useEffect } from 'react';
+import Container from 'react-bootstrap/Container';
+import Row from 'react-bootstrap/Row';
+import Col from 'react-bootstrap/Col';
+import PropTypes from 'prop-types';
+import Post from '../components/Post';
+import db, { auth } from '../firebase';
 
-import FollowedProfiles from "../components/FollowedProfiles";
+import FollowedProfiles from '../components/FollowedProfiles';
 
 const Body = ({ posts, setDefaultPost, postReference }) => {
   const [followed, setFollowed] = useState([]);
@@ -17,7 +17,7 @@ const Body = ({ posts, setDefaultPost, postReference }) => {
         snapshot.docs.map((doc) => ({
           id: doc.id,
           data: doc.data(),
-        }))
+        })),
       );
     });
   }, []);
