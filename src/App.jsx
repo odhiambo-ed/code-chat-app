@@ -1,10 +1,32 @@
-import React from 'react'
-import UserProfile from './components/UserProfile'
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Login from "./pages/Login";
+import HomePage from "./pages/HomePage";
+import AuthRoute from "./routes/AuthRoute";
+import ProtectedRoute from "./routes/ProtectedRoute";
 
-export const App = () => {
+function App() {
   return (
-    <div>
-      <UserProfile />
-    </div>
-  )
+    <BrowserRouter>
+      <Routes>
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+              <HomePage />
+            </ProtectedRoute>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <AuthRoute>
+              <Login />
+            </AuthRoute>
+          }
+        />
+      </Routes>
+    </BrowserRouter>
+  );
 }
+
+export default App;

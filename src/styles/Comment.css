@@ -1,0 +1,47 @@
+.commentSection {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: row;
+  width: 100%;
+  flex-wrap: wrap;
+}
+
+.time {
+  color: white;
+  font-family: monospace;
+  margin-left: 0.4em;
+  width: 11em;
+  font-size: 0.7em;
+}
+
+.username {
+  color: #29faef;
+  font-family: monospace;
+  margin-right: 1em;
+  font-size: 0.7em;
+}
+
+.comment {
+  color: gray;
+  font-family: monospace;
+  font-weight: bold;
+  margin-left: 1.5em;
+  word-wrap: break-word;
+  width: 90%;
+  font-size: 0.8em;
+}
+
+.hash {
+  color: rgb(4, 255, 88);
+  font-family: monospace;
+  font-weight: bold;
+  margin-left: 0.4em;
+  font-size: 0.7em;
+}
+
+.individualComment {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+}
