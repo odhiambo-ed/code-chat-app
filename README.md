@@ -2,9 +2,7 @@
 
 ## Sneak Peek
 
-<p align="center">
-  <img src="https://media.giphy.com/media/wOvgSQVwgMRSUfgyxb/giphy.gif" />
-</p>
+![Chat](/chat.gif)
 
 # Code Chat App
 
