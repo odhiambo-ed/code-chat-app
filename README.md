@@ -14,12 +14,8 @@ posts, Chat with other developers, Follow other developers, Unfollow other devel
 
 ## Screenshots
 
-<p float="left">
-  <img src="/b3.png" width="200" />
-  <img src="/b4.png" width="200" />
-  <img src="/b3.png" width="200" />
-  <img src="/b4.png" width="200" />
-</p>
+![Chat](/chat1.png)
+
 
 ## Demo Video
 
