@@ -25,7 +25,7 @@ posts, Chat with other developers, Follow other developers, Unfollow other devel
 
 ## Demo Video
 
-[Video Link](https://loom.com/share/96758514a8f94be9b52ebe052f671c7c)
+[Video Link](https://loom.com/share/7e0498ebc1424424ac4796df941135f1)
 
 ## Live Demo Link
 
