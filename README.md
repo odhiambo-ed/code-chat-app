@@ -23,13 +23,15 @@ posts, Chat with other developers, Follow other developers, Unfollow other devel
 
 ## Live Demo Link
 
-[Live Link](https://code-chat-ten.vercel.app/login)
+[Live Link](https://code-chat-ten.vercel.app)
 
 ## Built With
 
-![Ruby](https://icongr.am/devicon/ruby-original.svg?size=100&color=currentColor)
-![Ruby on Rails](https://icongr.am/devicon/rails-original-wordmark.svg?size=100&color=currentColor)
-![Ruby](https://icongr.am/devicon/postgresql-original.svg?size=100&color=currentColor)
+![JavaScript](https://icongr.am/devicon/javascript-original.svg?size=80&color=currentColor)
+![React](https://icongr.am/devicon/react-original.svg?size=80&color=currentColor)
+![HTML5](https://icongr.am/devicon/html5-original.svg?size=80&color=currentColor)
+![CSS3](https://icongr.am/devicon/css3-original.svg?size=80&color=currentColor)
+![Bootstrap](https://icongr.am/devicon/bootstrap-plain.svg?size=80&color=0e1dec)
 
 ## Get Started
 
